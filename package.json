@@ -6,7 +6,6 @@
   "author": "Antonio Calapez <antonio@hackages.io>",
   "license": "MIT",
   "scripts": {
-    "pretest": "npm install",
     "test": "mocha --compilers js:babel-core/register -w",
     "build": "webpack -w",
     "live": "live-server",
@@ -17,6 +16,7 @@
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "chai": "^4.0.1",
     "esdoc": "^0.5.2",
