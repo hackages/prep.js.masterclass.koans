@@ -2,8 +2,15 @@
   "name": "prep.js.masterclass",
   "version": "1.0.0",
   "main": "index.js",
+  "description": "In this set of examples and tests we cover JavaScript concepts",
   "repository": "git@bitbucket.org:hackages/prep.js.masterclass.git",
-  "author": "Antonio Calapez <antonio@hackages.io>",
+  "keywords": [
+    "es6",
+    "javascript",
+    "es7",
+    "hackages"
+  ],
+  "author": "007@hackages.io",
   "license": "MIT",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register -w",
