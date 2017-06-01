@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    '01_javascript': './test/javascript.js',
+    '01_basic': './test/basic.js',
     '02_advanced': './test/advanced.js',
     '03_es6': './test/es6.js',
   },
@@ -13,12 +13,6 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_module/ },
-      { test: /sinon\/pkg\/sinon\.js/, loader: 'imports?define=>false,require=>false' }
     ]
   },
-  resolve : {
-    alias: {
-      sinon: 'sinon/pkg/sinon',
-    },
-  }
 };
