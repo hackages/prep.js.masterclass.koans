@@ -4,13 +4,6 @@ describe("Basic javascript tests", function () {
   it("equality with type coercion", function () {
     expect(3).equal("__");
   });
-  it("for", function () {
-    var counter = 10;
-    for (var i = 1; i <= 3; i++) {
-      counter = counter + i;
-    }
-    expect(__).equal(counter);
-  });
   it("string.length", function () {
     var fruit = "apple";
     expect(__).equal(fruit.length);
@@ -27,11 +20,6 @@ describe("Basic javascript tests", function () {
     expect(__).equal(typeof(false));
   });
   describe("About Objects", function() {
-    it("object type", function() {
-      var empty_object = {};
-      expect(__).equal(typeof(empty_object));
-    });
-
     it("object literal notation", function() {
       var person = {
         __:__,
@@ -83,6 +71,82 @@ describe("Basic javascript tests", function () {
     expect("__").equal(typeof (secretValue), "is secretValue available in this context?");
     expect("__").equal(typeof (publicValue), "is publicValue available in this context?");
   });
+  // https://developer.mozilla.org/en/JavaScript/Guide/Inheritance_and_the_prototype_chain
+  describe("Prototype Chain", function () {
+
+    var father = {
+      b: 3,
+      c: 4
+    };
+
+    var child = Object.create(father);
+    child.a = 1;
+    child.b = 2;
+
+    /*
+     * ---------------------- ---- ---- ----
+     *                      [a]  [b]  [c]
+     * ---------------------- ---- ---- ----
+     * [child]               1    2
+     * ---------------------- ---- ---- ----
+     * [father]                   3    4
+     * ---------------------- ---- ---- ----
+     * [Object.prototype]
+     * ---------------------- ---- ---- ----
+     * [null]
+     * ---------------------- ---- ---- ----
+     * */
+
+    it("Is there an 'a' and 'b' own property on child?", function () {
+      expect(__).equal(child.hasOwnProperty('a'));
+      expect(__).equal(child.hasOwnProperty('b'));
+    });
+
+    it("Is there an 'a' and 'b' property on child?", function () {
+      expect(__).equal(child.a);
+      expect(__).equal(child.b);
+    });
+
+    it("If 'b' was removed, whats b value?", function () {
+      delete child.b;
+      expect(__).equal(child.b);
+    });
+
+
+    it("Is there a 'c' own property on child?", function () {
+      expect(__).equal(child.hasOwnProperty('c'));
+    });
+
+    // Is there a 'c' own property on child? No, check its prototype
+    // Is there a 'c' own property on child.[[Prototype]]? Yes, its value is...
+    it("Is there a 'c' property on child?", function () {
+      expect(__).equal(child.c);
+    });
+
+    // Is there a 'd' own property on child? No, check its prototype
+    // Is there a 'd' own property on child.[[Prototype]]? No, check it prototype
+    // child.[[Prototype]].[[Prototype]] is null, stop searching, no property found, return...
+    it("Is there an 'd' property on child?", function () {
+      expect(__).equal(child.d);
+    });
+
+  });
+
+  it("'this' on unattached function", function () {
+    var person = {
+      globalName: 'bob',
+      intro: function () {
+        return "Hello, my name is " + this.globalName;
+      }
+    }
+
+    var alias = person.intro;
+
+    // if the function is not called as an object property 'this' is the global context
+    // (window in a browser). This is an example. Please do not do this in practise.
+    window.__ = 'Peter';
+    expect(alias()).equal("Hello, my name is Peter");
+  });
   it("'this' set explicitly", function () {
     const person = {
       name: 'bob',
@@ -94,6 +158,19 @@ describe("Basic javascript tests", function () {
     // calling a function with 'call' lets us assign 'this' explicitly
     const message = person.intro.call({__: "Frank"});
     expect(message).equal(message);
+  });
+  it("variables declared inside of a function", function () {
+    var outerVariable = "outer";
+
+    // this is a self-invoking function. Notice that it calls itself at the end ().
+    (function () {
+      var innerVariable = "inner";
+      expect(__).equal(outerVariable);
+      expect(__).equal(innerVariable);
+    })();
+
+    expect(__).equal(outerVariable);
+    expect(__).equal(typeof (innerVariable));
   });
 
 });
