@@ -1,4 +1,4 @@
-import { expect, should } from 'chai';
+import {expect, should} from 'chai';
 
 describe("Basic javascript tests", function () {
   it("equality with type coercion", function () {
@@ -13,23 +13,23 @@ describe("Basic javascript tests", function () {
     var fruit = "apple pie";
     expect(__).equal(fruit.slice(0, 5));
   });
-  it("typeof", function() {
+  it("typeof", function () {
     expect(__).equal(typeof({}));
     expect(__).equal(typeof('apple'));
     expect(__).equal(typeof(-5));
     expect(__).equal(typeof(false));
   });
-  describe("About Objects", function() {
-    it("object literal notation", function() {
+  describe("About Objects", function () {
+    it("object literal notation", function () {
       var person = {
-        __:__,
-        __:__
+        __: __,
+        __: __
       };
       expect("Amory Blaine").equal(person.name);
       expect(102).equal(person.age);
     });
 
-    it("dynamically adding properties", function() {
+    it("dynamically adding properties", function () {
       var person = {};
       person.__ = "Amory Blaine";
       person.__ = 102;
@@ -37,7 +37,7 @@ describe("Basic javascript tests", function () {
       expect(102).equal(person.age);
     });
 
-    it("adding properties from strings", function() {
+    it("adding properties from strings", function () {
       var person = {};
       person["__"] = "Amory Blaine";
       person["__"] = 102;
@@ -45,11 +45,11 @@ describe("Basic javascript tests", function () {
       expect(102).equal(person.age);
     });
 
-    it("adding functions", function() {
+    it("adding functions", function () {
       var person = {
         name: "Amory Blaine",
         age: 102,
-        toString: function() {
+        toString: function () {
           return __;  // HINT: use the 'this' keyword to refer to the person object.
         }
       };
