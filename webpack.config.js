@@ -2,7 +2,9 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    '01_variables-parameters': './test/01_variables-parameters.spec.js',
+    '01_javascript': './test/javascript.js',
+    '02_advanced': './test/advanced.js',
+    '03_es6': './test/es6.js',
   },
   output: {
     filename: '[name].spec.js',
