@@ -15,7 +15,7 @@ In this set of examples and tests we cover JavaScript concepts such as
 
 ```bash
 # clone our repo
-git clone 
+git clone https://github.com/hackages/prep.js.masterclass.koans.git
 
 # change directory to our repo
 cd prep.js.masterclass
