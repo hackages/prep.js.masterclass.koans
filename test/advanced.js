@@ -2,7 +2,7 @@
 import { expect } from "chai";
 
 describe("Advanced JS", () => {
-  describe("Introduction to Mocha", () => {
+  describe("JS falsy values", () => {
     it("List all the falsy values in JavaScript", () => {
       let falsy = __;
       expect(falsy).to.not.be.ok;
@@ -89,7 +89,7 @@ describe("Advanced JS", () => {
         };
         const actual = company.addMentor("Juan");
 
-        expect(actual).to.be.equal(["Alex", "Juan"]);
+        expect(actual).to.be.deep.equal(["Alex", "Juan"]);
       });
     });
   });

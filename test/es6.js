@@ -80,6 +80,8 @@ describe('ES6 ', () => {
           expect(actual).equal(__);
 
           actual = person.getAgeProperty;
+
+          expect(actual).equal(__);
         });
       });
     });
