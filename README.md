@@ -2,12 +2,12 @@
 
 In this set of examples and tests we cover JavaScript concepts such as
  - closure,
- - inheritance
  - variable hoisting
  - 'this' with context switch...
+ - ES6 destructuring
 
 ### Quick start
-**Make sure you have Node version >= 6.0 and NPM >= 3**
+**Make sure you have Node version >= 7.0 and NPM >= 4**
 
 > Clone/Download the repo then edit `*.js` files inside [`/test/`](/test/)
 
@@ -46,7 +46,7 @@ go to [http://localhost:8080](http://localhost:8080) in your browser
 1. You can use your favorite IDE such as:
     1. WebStorm
     2. VS Code
-    3. [Atom.io ](https://atom.io/)
+    3. Atom.io
     4. Any other IDEs
 2. We will be using babel and Webpack
 
