@@ -40,20 +40,15 @@ go to [http://localhost:8080](http://localhost:8080) in your browser
 
 **We use Mocha in this repository**
 
-**For those using `yarn`, make sure to remove the `prestart` script before running `yarn**
-
-**For those using **WallabyJS**, just run it and you'll be on your way to master JS syntax**
-
 
 ## Recommended Tools
 
-1. You can use your favorite IDE but we recommend using one of those that support WallabyJS
+1. You can use your favorite IDE such as:
     1. WebStorm
     2. VS Code
     3. [Atom.io ](https://atom.io/)
     4. Any other IDEs
-2. If you haven’t done so just install [Wallabyjs](http://wallabyjs.com)
-3. We will be using babel and Webpack
+2. We will be using babel and Webpack
 
 ## Contributing
 
