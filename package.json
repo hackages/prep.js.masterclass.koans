@@ -17,7 +17,7 @@
     "test": "mocha --compilers js:babel-core/register -w",
     "build": "webpack -w",
     "live": "live-server",
-    "prestart": "yarn ",
+    "prestart": "npm install ",
     "start": "npm-run-all --parallel build live",
     "coverage": "istanbul cover mocha -- --compilers js:babel-core/register --colors --reporter dot",
     "docs": "esdoc -c esdoc.json && open ./esdoc/index.html"
