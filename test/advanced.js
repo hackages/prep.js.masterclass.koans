@@ -2,7 +2,7 @@
 import { expect } from "chai";
 
 describe("Advanced JS", () => {
-  describe("Introduction to Mocha and WallabyJS", () => {
+  describe("Introduction to Mocha", () => {
     it("List all the falsy values in JavaScript", () => {
       let falsy = __;
       expect(falsy).to.not.be.ok;
@@ -52,76 +52,17 @@ describe("Advanced JS", () => {
 
       expect(returnSecondArg("arguments")).to.equal(__);
 
-      // TODO: Fix the function to return all arguments. Hint: slice
+      // TODO: Fix the function to return all arguments.
       function returnAllArgs() {}
 
       expect(returnAllArgs("first", "second", "third")).to.equal(__);
     });
   });
 
-  describe("JavaScript Inheritance Functional Patterns", () => {
-    const animal = function(name) {
-      const that = {};
-      that.name = name || "";
-      that.gender = "";
-      that.planetOfBirth = "Earth";
-      that.getGender = function() {
-        return this.gender;
-      };
-      return that;
-    };
-
-    const male = function(name) {
-      const that = animal(name);
-      that.name = name;
-      that.gender = "Male";
-      return that;
-    };
-
-    const dog = male("joe");
-    it("Analysing dog", () => {
-      // What will be his gender?
-      // Where was he born?
-    });
-
-    const female = function(name) {
-      const that = animal(name);
-      that.name = name;
-      that.gender = "Female";
-      return that;
-    };
-
-    const cat = female("ana");
-    it("Analysing cat", () => {
-      // What will be his gender?
-      // Where was he born?
-    });
-
-    it("Analysing dog and cat", () => {
-      // Changing the planetOfBirth for the dog to "Pluton"
-      dog.planetOfBirth = "Pluton";
-      // Where were they born?
-    });
-  });
-
   describe("Context in JavaScript", () => {
     describe("Should use bind", () => {
-      it("increment the counter value", () => {
-        const counter = {
-          value: 0
-        };
-        // TODO Modify the code below to satisfy all the assertions below.
-        function increment() {
-          this.value++;
-          if (this.value === 10) {
-            expect(this.value).equal(10);
-            done();
-          }
-        }
-        setInterval(increment, 1000);
-      });
 
-      it("push a new user after 2s", done => {
+      it("push a new user after 0,5s", done => {
         const hackcamp = {
           members: ["Davy"]
         };
@@ -131,7 +72,7 @@ describe("Advanced JS", () => {
           expect(this.members.length).equal(2);
           done();
         }
-        setTimeout(addMembers, 2000);
+        setTimeout(addMembers, 500);
       });
     });
 
